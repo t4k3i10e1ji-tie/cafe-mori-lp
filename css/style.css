@@ -543,6 +543,86 @@ h1, h2, h3 {
   font-size: 0.95rem;
 }
 
+/* ---------- contact ---------- */
+
+.contact-section {
+  padding: var(--section-pad) 0;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.contact-inner {
+  max-width: 40rem;
+}
+
+.contact-form {
+  margin-top: 2.6rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--hairline);
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--cream-dim);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: #d3765f;
+}
+
+.field-error {
+  display: block;
+  min-height: 1.1em;
+  font-size: 0.8rem;
+  color: #e2a08c;
+}
+
+.contact-submit {
+  justify-self: start;
+  cursor: pointer;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
