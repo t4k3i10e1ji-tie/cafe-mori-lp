@@ -73,4 +73,66 @@
   } else {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
+
+  /* ---------- contact form validation ---------- */
+  const contactForm = document.getElementById('contactForm');
+
+  if (contactForm) {
+    const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const fields = [
+      {
+        input: document.getElementById('contactName'),
+        error: document.getElementById('contactNameError'),
+        validate: (value) => (value === '' ? 'お名前を入力してください。' : ''),
+      },
+      {
+        input: document.getElementById('contactEmail'),
+        error: document.getElementById('contactEmailError'),
+        validate: (value) => {
+          if (value === '') return 'メールアドレスを入力してください。';
+          if (!EMAIL_PATTERN.test(value)) return 'メールアドレスの形式が正しくありません。';
+          return '';
+        },
+      },
+      {
+        input: document.getElementById('contactMessage'),
+        error: document.getElementById('contactMessageError'),
+        validate: (value) => (value === '' ? 'お問い合わせ内容を入力してください。' : ''),
+      },
+    ];
+
+    const setFieldError = (field, message) => {
+      field.error.textContent = message;
+      field.input.closest('.form-group').classList.toggle('has-error', Boolean(message));
+      field.input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    };
+
+    fields.forEach((field) => {
+      field.input.addEventListener('input', () => {
+        setFieldError(field, field.validate(field.input.value.trim()));
+      });
+    });
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      let firstInvalid = null;
+
+      fields.forEach((field) => {
+        const message = field.validate(field.input.value.trim());
+        setFieldError(field, message);
+        if (message && !firstInvalid) firstInvalid = field.input;
+      });
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
+
+      alert('送信しました');
+      contactForm.reset();
+      fields.forEach((field) => setFieldError(field, ''));
+    });
+  }
 })();
