@@ -9,22 +9,22 @@
 
   /* ---------- header background on scroll ---------- */
   const updateHeaderState = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 12);
+    header.classList.toggle('header--scrolled', window.scrollY > 12);
   };
   updateHeaderState();
   window.addEventListener('scroll', updateHeaderState, { passive: true });
 
   /* ---------- mobile nav toggle ---------- */
   const closeNav = () => {
-    nav.classList.remove('is-open');
+    nav.classList.remove('header__nav--open');
     navToggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
+    header.classList.remove('header--nav-open');
   };
 
   const toggleNav = () => {
-    const isOpen = nav.classList.toggle('is-open');
+    const isOpen = nav.classList.toggle('header__nav--open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('nav-open', isOpen);
+    header.classList.toggle('header--nav-open', isOpen);
   };
 
   navToggle.addEventListener('click', toggleNav);
@@ -61,7 +61,7 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add('reveal--visible');
             observer.unobserve(entry.target);
           }
         });
@@ -71,7 +71,7 @@
 
     revealTargets.forEach((el) => observer.observe(el));
   } else {
-    revealTargets.forEach((el) => el.classList.add('is-visible'));
+    revealTargets.forEach((el) => el.classList.add('reveal--visible'));
   }
 
   /* ---------- contact form validation ---------- */
@@ -104,7 +104,7 @@
 
     const setFieldError = (field, message) => {
       field.error.textContent = message;
-      field.input.closest('.form-group').classList.toggle('has-error', Boolean(message));
+      field.input.closest('.contact__group').classList.toggle('contact__group--error', Boolean(message));
       field.input.setAttribute('aria-invalid', message ? 'true' : 'false');
     };
 
