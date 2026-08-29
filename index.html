@@ -18,232 +18,237 @@
 
   <div class="canopy" aria-hidden="true"></div>
 
-  <header class="site-header" id="siteHeader">
-    <div class="header-inner">
-      <a href="#hero" class="brand" data-nav-link>
-        <span class="brand-mark">森</span>
-        <span class="brand-word">CAFÉ MORI</span>
+  <!-- ===== HEADER : サイト全体のブランドとナビゲーションのみを担当 ===== -->
+  <header class="header" id="siteHeader">
+    <div class="header__inner">
+      <a href="#hero" class="header__brand" data-nav-link>
+        <span class="header__brand-mark">森</span>
+        <span class="header__brand-word">CAFÉ MORI</span>
       </a>
 
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="#hero" data-nav-link>ホーム</a></li>
-          <li><a href="#menu" data-nav-link>メニュー</a></li>
-          <li><a href="#access" data-nav-link>アクセス</a></li>
-          <li><a href="#contact" data-nav-link>お問い合わせ</a></li>
+      <nav class="header__nav" id="mainNav" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a class="header__nav-link" href="#hero" data-nav-link>ホーム</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#menu" data-nav-link>メニュー</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#access" data-nav-link>アクセス</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#contact" data-nav-link>お問い合わせ</a></li>
         </ul>
       </nav>
 
-      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
+      <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mainNav">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
       </button>
     </div>
   </header>
 
-  <main>
+  <!-- ===== MAIN : ページの主要コンテンツ（見出し以外の実質的な情報）を担当 ===== -->
+  <main class="main">
 
-    <!-- ===== HERO ===== -->
+    <!-- ----- HERO ----- -->
     <section id="hero" class="hero">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="eyebrow reveal">SPECIALTY COFFEE &amp; QUIET HOURS</p>
-        <h1 class="hero-title reveal">
-          <span class="jp">森の中で、</span>
-          <span class="jp">一杯と向き合う。</span>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="section__eyebrow reveal">SPECIALTY COFFEE &amp; QUIET HOURS</p>
+        <h1 class="hero__title reveal">
+          <span class="hero__title-line">森の中で、</span>
+          <span class="hero__title-line">一杯と向き合う。</span>
         </h1>
-        <p class="hero-lead reveal">
-          木漏れ日のように差し込む静けさの中、厳選したスペシャルティ豆を一杯ずつ丁寧に。<br class="br-pc">
+        <p class="hero__lead reveal">
+          木漏れ日のように差し込む静けさの中、厳選したスペシャルティ豆を一杯ずつ丁寧に。<br class="hero__break">
           CAFÉ MORI は、街の喧騒からそっと離れる小さな森の喫茶室です。
         </p>
-        <div class="hero-actions reveal">
-          <a href="#menu" class="btn btn-primary" data-nav-link>メニューを見る</a>
-          <a href="#access" class="btn btn-ghost" data-nav-link>アクセス</a>
+        <div class="hero__actions reveal">
+          <a href="#menu" class="btn btn--primary" data-nav-link>メニューを見る</a>
+          <a href="#access" class="btn btn--ghost" data-nav-link>アクセス</a>
         </div>
       </div>
-      <a href="#menu" class="scroll-cue" data-nav-link aria-label="次のセクションへスクロール">
-        <span class="scroll-cue-line"></span>
-        <span>SCROLL</span>
+      <a href="#menu" class="hero__scroll-cue" data-nav-link aria-label="次のセクションへスクロール">
+        <span class="hero__scroll-cue-line"></span>
+        <span class="hero__scroll-cue-label">SCROLL</span>
       </a>
     </section>
 
-    <!-- ===== MENU ===== -->
-    <section id="menu" class="menu-section">
-      <div class="section-inner">
-        <p class="eyebrow reveal">MENU</p>
-        <h2 class="section-title reveal">森でいただく、季節の一皿</h2>
-        <p class="section-lead reveal">豆本来の香りを活かすため、すべてハンドドリップで一杯ずつ抽出しています。</p>
+    <!-- ----- MENU ----- -->
+    <section id="menu" class="menu">
+      <div class="section__inner">
+        <p class="section__eyebrow reveal">MENU</p>
+        <h2 class="section__title reveal">森でいただく、季節の一皿</h2>
+        <p class="section__lead reveal">豆本来の香りを活かすため、すべてハンドドリップで一杯ずつ抽出しています。</p>
 
-        <div class="menu-group reveal">
-          <h3 class="menu-group-title"><span class="menu-icon" aria-hidden="true">◐</span>コーヒー</h3>
-          <ul class="menu-list">
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">森ブレンド</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥580</span>
+        <div class="menu__group reveal">
+          <h3 class="menu__group-title"><span class="menu__group-icon" aria-hidden="true">◐</span>コーヒー</h3>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">森ブレンド</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥580</span>
               </div>
-              <p class="menu-item-desc">当店定番。木の実のような甘い香りとまろやかなコク。</p>
+              <p class="menu__item-desc">当店定番。木の実のような甘い香りとまろやかなコク。</p>
             </li>
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">ハンドドリップ シングルオリジン</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥680</span>
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">ハンドドリップ シングルオリジン</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥680</span>
               </div>
-              <p class="menu-item-desc">その日おすすめの一豆を、一杯ずつ丁寧に抽出。</p>
+              <p class="menu__item-desc">その日おすすめの一豆を、一杯ずつ丁寧に抽出。</p>
             </li>
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">森ラテ</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥620</span>
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">森ラテ</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥620</span>
               </div>
-              <p class="menu-item-desc">濃厚エスプレッソに、きめ細やかなミルクフォーム。</p>
+              <p class="menu__item-desc">濃厚エスプレッソに、きめ細やかなミルクフォーム。</p>
             </li>
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">水出しアイスコーヒー</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥600</span>
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">水出しアイスコーヒー</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥600</span>
               </div>
-              <p class="menu-item-desc">8時間かけて低温抽出。すっきりとした後味。</p>
+              <p class="menu__item-desc">8時間かけて低温抽出。すっきりとした後味。</p>
             </li>
           </ul>
         </div>
 
-        <div class="menu-group reveal">
-          <h3 class="menu-group-title"><span class="menu-icon" aria-hidden="true">❀</span>ティー &amp; その他</h3>
-          <ul class="menu-list">
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">森のハーブティー</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥580</span>
+        <div class="menu__group reveal">
+          <h3 class="menu__group-title"><span class="menu__group-icon" aria-hidden="true">❀</span>ティー &amp; その他</h3>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">森のハーブティー</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥580</span>
               </div>
-              <p class="menu-item-desc">数種のハーブをブレンドした、香り高い一杯。</p>
+              <p class="menu__item-desc">数種のハーブをブレンドした、香り高い一杯。</p>
             </li>
           </ul>
         </div>
 
-        <div class="menu-group reveal">
-          <h3 class="menu-group-title"><span class="menu-icon" aria-hidden="true">✦</span>デザート</h3>
-          <ul class="menu-list">
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">自家製バスクチーズケーキ</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥650</span>
+        <div class="menu__group reveal">
+          <h3 class="menu__group-title"><span class="menu__group-icon" aria-hidden="true">✦</span>デザート</h3>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">自家製バスクチーズケーキ</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥650</span>
               </div>
-              <p class="menu-item-desc">濃厚でありながら、後味は軽やか。</p>
+              <p class="menu__item-desc">濃厚でありながら、後味は軽やか。</p>
             </li>
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">季節のフルーツタルト</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥700</span>
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">季節のフルーツタルト</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥700</span>
               </div>
-              <p class="menu-item-desc">旬の果実をたっぷりと。日替わりでご用意。</p>
+              <p class="menu__item-desc">旬の果実をたっぷりと。日替わりでご用意。</p>
             </li>
-            <li class="menu-item">
-              <div class="menu-item-head">
-                <span class="menu-item-name">森のガトーショコラ</span>
-                <span class="leader" aria-hidden="true"></span>
-                <span class="menu-item-price">¥620</span>
+            <li class="menu__item">
+              <div class="menu__item-head">
+                <span class="menu__item-name">森のガトーショコラ</span>
+                <span class="menu__item-leader" aria-hidden="true"></span>
+                <span class="menu__item-price">¥620</span>
               </div>
-              <p class="menu-item-desc">しっとりと濃厚な、大人のためのチョコレートケーキ。</p>
+              <p class="menu__item-desc">しっとりと濃厚な、大人のためのチョコレートケーキ。</p>
             </li>
           </ul>
         </div>
 
-        <p class="menu-note reveal">※ 表示価格はすべて税込です。</p>
+        <p class="menu__note reveal">※ 表示価格はすべて税込です。</p>
       </div>
     </section>
 
-    <!-- ===== ACCESS ===== -->
-    <section id="access" class="access-section">
-      <div class="section-inner access-grid">
-        <div class="access-info reveal">
-          <p class="eyebrow">ACCESS</p>
-          <h2 class="section-title">アクセス</h2>
+    <!-- ----- ACCESS ----- -->
+    <section id="access" class="access">
+      <div class="section__inner access__grid">
+        <div class="access__info reveal">
+          <p class="section__eyebrow">ACCESS</p>
+          <h2 class="section__title">アクセス</h2>
 
-          <dl class="info-list">
-            <div class="info-row">
-              <dt>住所</dt>
-              <dd>〒113-0033<br>東京都文京区森の丘 2-14</dd>
+          <dl class="access__list">
+            <div class="access__row">
+              <dt class="access__term">住所</dt>
+              <dd class="access__desc">〒113-0033<br>東京都文京区森の丘 2-14</dd>
             </div>
-            <div class="info-row">
-              <dt>最寄駅</dt>
-              <dd>森ノ坂駅 東口より徒歩5分</dd>
+            <div class="access__row">
+              <dt class="access__term">最寄駅</dt>
+              <dd class="access__desc">森ノ坂駅 東口より徒歩5分</dd>
             </div>
-            <div class="info-row">
-              <dt>営業時間</dt>
-              <dd>8:00 - 19:00（L.O. 18:30）</dd>
+            <div class="access__row">
+              <dt class="access__term">営業時間</dt>
+              <dd class="access__desc">8:00 - 19:00（L.O. 18:30）</dd>
             </div>
-            <div class="info-row">
-              <dt>定休日</dt>
-              <dd>毎週月曜日</dd>
+            <div class="access__row">
+              <dt class="access__term">定休日</dt>
+              <dd class="access__desc">毎週月曜日</dd>
             </div>
-            <div class="info-row">
-              <dt>電話</dt>
-              <dd>03-0000-0000</dd>
+            <div class="access__row">
+              <dt class="access__term">電話</dt>
+              <dd class="access__desc">03-0000-0000</dd>
             </div>
-            <div class="info-row">
-              <dt>Instagram</dt>
-              <dd>@cafe_mori_tokyo</dd>
+            <div class="access__row">
+              <dt class="access__term">Instagram</dt>
+              <dd class="access__desc">@cafe_mori_tokyo</dd>
             </div>
           </dl>
         </div>
 
-        <div class="access-map reveal" aria-hidden="true">
-          <div class="map-card">
-            <div class="map-rings"></div>
-            <div class="map-pin">
-              <span class="map-pin-dot"></span>
+        <div class="access__map reveal" aria-hidden="true">
+          <div class="access__map-card">
+            <div class="access__map-rings"></div>
+            <div class="access__map-pin">
+              <span class="access__map-pin-dot"></span>
             </div>
-            <div class="map-lines"></div>
-            <p class="map-caption">CAFÉ MORI</p>
+            <div class="access__map-lines"></div>
+            <p class="access__map-caption">CAFÉ MORI</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="contact-section">
-      <div class="section-inner contact-inner">
-        <p class="eyebrow reveal">CONTACT</p>
-        <h2 class="section-title reveal">お問い合わせ</h2>
-        <p class="section-lead reveal">ご予約・貸切・その他ご質問は、下記フォームよりお気軽にお送りください。</p>
+    <!-- ----- CONTACT ----- -->
+    <section id="contact" class="contact">
+      <div class="section__inner contact__inner">
+        <p class="section__eyebrow reveal">CONTACT</p>
+        <h2 class="section__title reveal">お問い合わせ</h2>
+        <p class="section__lead reveal">ご予約・貸切・その他ご質問は、下記フォームよりお気軽にお送りください。</p>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="contactName">お名前</label>
-            <input type="text" id="contactName" name="name" autocomplete="name">
-            <span class="field-error" id="contactNameError" role="alert"></span>
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="contact__group">
+            <label class="contact__label" for="contactName">お名前</label>
+            <input class="contact__input" type="text" id="contactName" name="name" autocomplete="name">
+            <span class="contact__error" id="contactNameError" role="alert"></span>
           </div>
 
-          <div class="form-group">
-            <label for="contactEmail">メールアドレス</label>
-            <input type="email" id="contactEmail" name="email" autocomplete="email">
-            <span class="field-error" id="contactEmailError" role="alert"></span>
+          <div class="contact__group">
+            <label class="contact__label" for="contactEmail">メールアドレス</label>
+            <input class="contact__input" type="email" id="contactEmail" name="email" autocomplete="email">
+            <span class="contact__error" id="contactEmailError" role="alert"></span>
           </div>
 
-          <div class="form-group">
-            <label for="contactMessage">お問い合わせ内容</label>
-            <textarea id="contactMessage" name="message" rows="5"></textarea>
-            <span class="field-error" id="contactMessageError" role="alert"></span>
+          <div class="contact__group">
+            <label class="contact__label" for="contactMessage">お問い合わせ内容</label>
+            <textarea class="contact__textarea" id="contactMessage" name="message" rows="5"></textarea>
+            <span class="contact__error" id="contactMessageError" role="alert"></span>
           </div>
 
-          <button type="submit" class="btn btn-primary contact-submit">送信する</button>
+          <button type="submit" class="btn btn--primary contact__submit">送信する</button>
         </form>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-brand">CAFÉ MORI</p>
-      <p class="footer-copy">&copy; 2026 CAFÉ MORI. All rights reserved.</p>
+  <!-- ===== FOOTER : 著作権表示などページ全体の付随情報のみを担当 ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__brand">CAFÉ MORI</p>
+      <p class="footer__copy">&copy; 2026 CAFÉ MORI. All rights reserved.</p>
     </div>
   </footer>
 
